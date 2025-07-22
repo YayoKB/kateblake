@@ -1,0 +1,199 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kate Blake</title>
+  </head>
+  <body>
+    <header>
+      <svg aria-hidden="true" class="visually-hidden">
+        <defs>
+          <filter id="wiggle">
+            <feTurbulence baseFrequency="0.01" numOctaves="1" type="fractalNoise" result="turbulence">
+              <animate attributeName="seed" dur="10s" repeatCount="indefinite" values="1; 30; 1"></animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="5" xChannelSelector="R" yChannelSelector="G"
+            ></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
+      <p class="logo">
+        <a href="/">KB</a>
+      </p>
+      <ul>
+        <li>
+          <a href="#work"
+            >About
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
+              <path
+                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
+                fill="none"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#about"
+            >Work
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
+              <path
+                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
+                fill="none"></path>
+            </svg></a>
+        </li>
+        <li>
+          <a href="#contact"
+            >Contact
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
+              <path
+                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
+                fill="none"></path>
+            </svg></a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <h1 class="title">
+            <span class="name">Kate Blake</span><br />
+            Front End <span aria-hidden="true">
+              <svg
+                class="icon"
+                width="70"
+                height="73"
+                viewBox="0 0 70 73"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M40.1465 3.36072C38.1111 12.7375 27.8322 31.491 3.00006 31.491"
+                  stroke="white"
+                  stroke-width="5.40967"
+                  stroke-linecap="round"></path>
+                <path
+                  d="M40.1464 69.3586C41.589 60.1021 48.874 41.589 66.4735 41.589"
+                  stroke="white"
+                  stroke-width="5.40967"
+                  stroke-linecap="round"></path>
+                <path
+                  d="M40.1464 3C41.589 15.863 48.874 41.589 66.4735 41.589"
+                  stroke="white"
+                  stroke-width="5.40967"
+                  stroke-linecap="round"></path>
+                <path
+                  d="M40.1464 69.3586C38.111 56.7361 27.8321 31.4909 3 31.4909"
+                  stroke="white"
+                  stroke-width="5.40967"
+                  stroke-linecap="round"></path>
+              </svg>
+            </span><br /> Web <span class="developer">Developer</span>
+          </h1>
+          <p class="greetings handwriting">Nice to meet you :)</p>
+          <a href="#work" class="get-started handwriting">
+            Let's get started!
+            <svg width="124" height="140" viewBox="0 0 124 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M66.2034 38.6441C70.9247 32.8119 74.7573 27.8685 78.812 23.0916C82.4225 18.8702 86.0885 14.7599 89.9766 10.7607C93.6425 6.98368 97.5306 3.76209 103.529 4.6508C105.529 4.92853 107.751 3.65094 109.917 3.20659C112.083 2.76223 114.25 2.20684 116.471 2.15129C121.082 2.0402 124.081 5.59501 123.192 10.1497C122.748 12.2604 121.804 14.3156 120.859 16.3152C112.972 33.0341 105.14 49.7532 97.0862 66.361C88.1435 84.8019 82.4225 104.187 78.701 124.294C78.0344 127.904 77.2012 131.57 76.0348 135.014C75.035 138.014 72.6466 139.791 69.2584 139.791C66.3145 139.736 63.815 138.069 63.0374 134.514C58.8716 115.685 48.8179 99.7434 38.9865 83.6909C25.8224 62.2507 13.9358 40.1439 3.93777 17.0373C2.93796 14.6489 1.82715 12.316 1.10506 9.81648C0.271896 6.87261 0.327415 3.92866 3.16019 1.81796C5.54861 0.0405331 7.82587 0.651579 10.4365 1.59584C28.7107 8.42784 43.6522 20.3699 58.6493 32.2565C60.9822 34.0339 63.1485 36.0335 66.2034 38.6441ZM24.0449 26.4243C36.2648 54.3633 51.9284 78.0809 66.2034 102.521C66.4256 102.854 67.481 102.743 68.7029 102.909C69.9249 98.8546 71.0357 94.6332 72.3688 90.4674C73.6463 86.6348 74.9795 82.8021 76.4792 79.0251C78.09 74.9148 79.8119 70.8046 81.5893 66.7498C83.3667 62.695 85.3108 58.6958 87.1438 54.6966C88.9767 50.6974 90.8096 46.6426 92.6426 42.5879C94.3645 38.9219 96.2531 35.3114 97.7528 31.5344C99.3636 27.5907 102.141 24.0914 102.696 19.2035C101.252 19.8145 100.419 19.87 100.03 20.3144C90.1431 30.8123 80.7005 41.5881 73.6464 54.2522C69.5361 61.6952 64.6481 61.6397 59.5935 54.3633C57.094 50.7529 54.428 47.0869 51.0953 44.3097C43.9856 38.4775 36.4315 33.1452 28.9885 27.7018C28.2109 27.313 27.0443 27.2575 24.0449 26.4243Z"
+                fill="currentColor"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <section id="work">
+        <h2>Featured Work</h2>
+        <ul>
+          <li>
+            <article>
+              <img src="/src/images/aurecon.png" alt="Aurecon website preview" />
+              <h3>Aurecon</h3>
+              <ul class="technologies" aria-label="Technologies I used in Aurecon project:">
+                <li>React</li>
+                <li>Typescript</li>
+                <li>Framer Motion</li>
+                <li>Storybook</li>
+              </ul>
+              <p>A brief description of Project 1. It showcases my skills in frontend development and design.</p>
+              <a href="https://www.aurecongroup.com/">View Site</a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/src/images/ngi.png" alt="Nedgroup Investments website preview" />
+              <h3>Nedgroup Investments</h3>
+              <ul class="technologies" aria-label="Technologies I used in Nedgroup Investments project:">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <p>
+                A brief description of Project 2. It highlights my ability to create responsive and user-friendly
+                interfaces.
+              </p>
+              <a href="https://www.nedgroupinvestments.com/content/NGISingleSiteContent/Other.html">View Site</a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/src/images/nml.png" alt="NML's 2023 yearend website preview" />
+              <h3>NML 2023 Yearend</h3>
+              <ul class="technologies" aria-label="Technologies I used in NML 2023 Yearend project:">
+                <li>Next.js</li>
+                <li>Typescript</li>
+                <li>Tailwind CSS</li>
+                <li>Framer Motion</li>
+              </ul>
+              <p>
+                A brief description of Project 3. It demonstrates my expertise in modern web technologies and best
+                practices.
+              </p>
+              <a href="https://yearend.nml.co.za/">View Site</a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <img src="/src/images/storage.png" alt="Stor-Age website preview" />
+              <h3>Stor-Age</h3>
+              <ul class="technologies" aria-label="Technologies I used in Stor-Age project:">
+                <li>Next.js</li>
+                <li>Typescript</li>
+                <li>Framer Motion</li>
+                <li>Strapi</li>
+              </ul>
+              <p>
+                A brief description of Project 4. It showcases my skills in creating visually appealing and functional
+                web applications.
+              </p>
+              <a href="https://www.stor-age.co.za/">View Site</a>
+            </article>
+          </li>
+        </ul>
+      </section>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a frontend web developer with a passion for creating beautiful and functional websites.</p>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          If you'd like to get in touch, feel free to reach out via email at <a href="mailto:kateellablake@gmail.com"
+          ></a>
+        </p>
+        <ul>
+          <li><a href="https://linkedin.com/in/kateblake">LinkedIn</a></li>
+          <li><a href="https://github.com/yayokb">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+  <footer>
+    <p>
+      2025. Developed by me, designed by <a href="https://portfolio-amber-jones-projects.vercel.app/">Amber Jones</a>!
+    </p>
+  </footer>
+</html>
