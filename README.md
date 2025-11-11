@@ -1,47 +1,64 @@
-# Astro Starter Kit: Minimal
+# Kate Blake's Personal Website
 
-```sh
-npm create astro@latest -- --template minimal
+My personal portfolio site, where I show off some of my work and spend too much time trying to optimise fonts.
+
+## Tech Stack
+
+- **Astro** - Lightweight & easy to use
+- **TypeScript** - Just a little here and there
+- **CSS** - Plain and simple
+
+## Running Locally
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Custom font optimisation with critical CSS subsets ([this post was my bible](https://www.jonoalderson.com/performance/youre-loading-fonts-wrong/))
+- Accessible navigation and content
+- Playful animations and SVG filters (another rabbit hole of note)
+- Interactive Lilly photo toggle (the most important feature)
+- (in progress) Fully responsive design that works everywhere
 
-## 🚀 Project Structure
+## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+```
 ├── public/
+│   └── fonts/          # Optimized font subsets
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/     # Astro components
+│   ├── icons/          # SVG icons
+│   ├── images/         # Project screenshots & Lilly pics
+│   ├── pages/          # Site pages
+│   ├── scripts/        # Client-side JS
+│   └── styles/         # Global CSS
+└── astro.config.mjs    # Astro configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Design Credits
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Initial design by the talented [Amber Jones](https://portfolio-amber-jones-projects.vercel.app/)!
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deployment
 
-## 🧞 Commands
+Deployed on Netlify because it's easy and works great with Astro.
 
-All commands are run from the root of the project, from a terminal:
+## License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+MIT License. That being said, please don't just entirely copy this!
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+_*Here lies the "built with too much caffeine, not enough sleep" comment that everybody has for some reason*_

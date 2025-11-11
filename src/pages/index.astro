@@ -1,5 +1,22 @@
 ---
+import { Image } from "astro:assets";
+import Head from "../components/Head.astro";
 import "../styles/global.css";
+import CircleScribble from "../icons/circle-scribble.svg";
+import Star from "../icons/star1.svg";
+import DownArrow from "../icons/down-arrow.svg";
+import aurecon from "../images/aurecon.png";
+import ngi from "../images/ngi.png";
+import nml from "../images/nml.png";
+import storage from "../images/storage.png";
+import Diamond from "../icons/diamond.svg";
+import Heart2 from "../icons/heart2.svg";
+import Smile2 from "../icons/smile2.svg";
+import lilly1 from "../images/lilly1.jpg";
+import lilly2 from "../images/lilly2.jpg";
+import LillyArrow from "../icons/arrow4.svg";
+import LinkedIn from "../icons/LinkedIn.svg";
+import Github from "../icons/Github.svg";
 ---
 
 <html lang="en">
@@ -8,11 +25,114 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Kate Blake</title>
+
+    <Head />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-h1-subset.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-name-subset.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-pen-subset.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-nav-subset.woff2" />
+    <style>
+      @font-face {
+        font-family: "H1 Fallback";
+        src: local("Arial"), local("Helvetica"), local("sans-serif");
+      }
+
+      /* critiical h1 */
+      @font-face {
+        font-family: "Lexend Zetta H1 Crit";
+        src: url("/fonts/crit-h1-subset.woff2") format("woff2");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* critical name */
+      @font-face {
+        font-family: "Lexend Zetta Name Crit";
+        src: url("/fonts/crit-name-subset.woff2") format("woff2");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* critical nav */
+      @font-face {
+        font-family: "Lexend Zetta Nav Crit";
+        src: url("/fonts/crit-nav-subset.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* critical handwriting */
+      @font-face {
+        font-family: "Nanum Pen Crit";
+        src: url("/fonts/crit-pen-subset.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* regular body font */
+      @font-face {
+        font-family: "Lexend Exa";
+        src: url("/fonts/LexendExa-VariableFont_wght-subset.woff2") format("woff2");
+        font-weight: 100 900;
+        font-display: swap;
+      }
+
+      /* headings font */
+      @font-face {
+        font-family: "Lexend Zetta";
+        src: url("/fonts/LexendZetta-VariableFont_wght-subset.woff2") format("woff2");
+        font-weight: 100 900;
+        font-display: swap;
+      }
+
+      /* handwriting font */
+      @font-face {
+        font-family: "Nanum Pen";
+        src: url("/fonts/NanumPenScript-Regular-subset.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      h1 {
+        font-family: "Lexend Zetta H1 Crit", "H1 Fallback", sans-serif;
+      }
+
+      .intro .title .name {
+        font-family: "Lexend Zetta Name Crit", "H1 Fallback", sans-serif;
+      }
+
+      header ul > li {
+        font-family: "Lexend Zetta Nav Crit", "H1 Fallback", sans-serif;
+      }
+
+      .intro .handwriting {
+        font-family: "Nanum Pen Crit", cursive;
+      }
+
+      body {
+        font-family:
+          "Lexend Exa",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif,
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+    </style>
   </head>
   <body>
     <header>
-      <svg aria-hidden="true" class="visually-hidden">
+      <svg class="visually-hidden" aria-hidden="true">
         <defs>
           <filter id="wiggle">
             <feTurbulence baseFrequency="0.01" numOctaves="1" type="fractalNoise" result="turbulence">
@@ -28,32 +148,22 @@ import "../styles/global.css";
       </p>
       <ul>
         <li>
-          <a href="#work"
-            >About
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
-              <path
-                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
-                fill="none"></path>
-            </svg>
+          <a href="#work">
+            About
+            <CircleScribble />
           </a>
         </li>
         <li>
-          <a href="#about"
-            >Work
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
-              <path
-                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
-                fill="none"></path>
-            </svg></a>
+          <a href="#about">
+            Work
+            <CircleScribble />
+          </a>
         </li>
         <li>
-          <a href="#contact"
-            >Contact
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.9 43.4">
-              <path
-                d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"
-                fill="none"></path>
-            </svg></a>
+          <a href="#contact">
+            Contact
+            <CircleScribble />
+          </a>
         </li>
       </ul>
     </header>
@@ -62,55 +172,23 @@ import "../styles/global.css";
         <div>
           <h1 class="title">
             <span class="name">Kate Blake</span><br />
-            Front End <span aria-hidden="true">
-              <svg
-                class="icon"
-                width="70"
-                height="73"
-                viewBox="0 0 70 73"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M40.1465 3.36072C38.1111 12.7375 27.8322 31.491 3.00006 31.491"
-                  stroke="white"
-                  stroke-width="5.40967"
-                  stroke-linecap="round"></path>
-                <path
-                  d="M40.1464 69.3586C41.589 60.1021 48.874 41.589 66.4735 41.589"
-                  stroke="white"
-                  stroke-width="5.40967"
-                  stroke-linecap="round"></path>
-                <path
-                  d="M40.1464 3C41.589 15.863 48.874 41.589 66.4735 41.589"
-                  stroke="white"
-                  stroke-width="5.40967"
-                  stroke-linecap="round"></path>
-                <path
-                  d="M40.1464 69.3586C38.111 56.7361 27.8321 31.4909 3 31.4909"
-                  stroke="white"
-                  stroke-width="5.40967"
-                  stroke-linecap="round"></path>
-              </svg>
-            </span><br /> Web <span class="developer">Developer</span>
+            Front End <Star class="icon" aria-hidden /><br />
+            Web <span class="underline">Developer</span>
           </h1>
           <p class="greetings handwriting">Nice to meet you :)</p>
           <a href="#work" class="get-started handwriting">
             Let's get started!
-            <svg width="124" height="140" viewBox="0 0 124 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M66.2034 38.6441C70.9247 32.8119 74.7573 27.8685 78.812 23.0916C82.4225 18.8702 86.0885 14.7599 89.9766 10.7607C93.6425 6.98368 97.5306 3.76209 103.529 4.6508C105.529 4.92853 107.751 3.65094 109.917 3.20659C112.083 2.76223 114.25 2.20684 116.471 2.15129C121.082 2.0402 124.081 5.59501 123.192 10.1497C122.748 12.2604 121.804 14.3156 120.859 16.3152C112.972 33.0341 105.14 49.7532 97.0862 66.361C88.1435 84.8019 82.4225 104.187 78.701 124.294C78.0344 127.904 77.2012 131.57 76.0348 135.014C75.035 138.014 72.6466 139.791 69.2584 139.791C66.3145 139.736 63.815 138.069 63.0374 134.514C58.8716 115.685 48.8179 99.7434 38.9865 83.6909C25.8224 62.2507 13.9358 40.1439 3.93777 17.0373C2.93796 14.6489 1.82715 12.316 1.10506 9.81648C0.271896 6.87261 0.327415 3.92866 3.16019 1.81796C5.54861 0.0405331 7.82587 0.651579 10.4365 1.59584C28.7107 8.42784 43.6522 20.3699 58.6493 32.2565C60.9822 34.0339 63.1485 36.0335 66.2034 38.6441ZM24.0449 26.4243C36.2648 54.3633 51.9284 78.0809 66.2034 102.521C66.4256 102.854 67.481 102.743 68.7029 102.909C69.9249 98.8546 71.0357 94.6332 72.3688 90.4674C73.6463 86.6348 74.9795 82.8021 76.4792 79.0251C78.09 74.9148 79.8119 70.8046 81.5893 66.7498C83.3667 62.695 85.3108 58.6958 87.1438 54.6966C88.9767 50.6974 90.8096 46.6426 92.6426 42.5879C94.3645 38.9219 96.2531 35.3114 97.7528 31.5344C99.3636 27.5907 102.141 24.0914 102.696 19.2035C101.252 19.8145 100.419 19.87 100.03 20.3144C90.1431 30.8123 80.7005 41.5881 73.6464 54.2522C69.5361 61.6952 64.6481 61.6397 59.5935 54.3633C57.094 50.7529 54.428 47.0869 51.0953 44.3097C43.9856 38.4775 36.4315 33.1452 28.9885 27.7018C28.2109 27.313 27.0443 27.2575 24.0449 26.4243Z"
-                fill="currentColor"></path>
-            </svg>
+            <DownArrow />
           </a>
         </div>
       </section>
       <section id="work">
-        <h2>Featured Work</h2>
+        <h2><span class="underline">Featured</span> <Diamond aria-hidden class="icon" /> Work</h2>
         <ul>
           <li>
             <article>
-              <img src="/src/images/aurecon.png" alt="Aurecon website preview" />
+              <div class="border-glow" aria-hidden></div>
+              <Image src={aurecon} alt="Aurecon website preview" />
               <h3>Aurecon</h3>
               <ul class="technologies" aria-label="Technologies I used in Aurecon project:">
                 <li>React</li>
@@ -118,13 +196,18 @@ import "../styles/global.css";
                 <li>Framer Motion</li>
                 <li>Storybook</li>
               </ul>
-              <p>A brief description of Project 1. It showcases my skills in frontend development and design.</p>
-              <a href="https://www.aurecongroup.com/">View Site</a>
+              <p>
+                A global engineering firm from the South Pacific. Big requirements for a big project. I focused on
+                building their redesigned geo-location switcher, homepage animations and navigation in React with Framer
+                Motion. Quite a deep dive into Typescript and managing complex components.
+              </p>
+              <a href="https://www.aurecongroup.com/"> View Site </a>
             </article>
           </li>
           <li>
             <article>
-              <img src="/src/images/ngi.png" alt="Nedgroup Investments website preview" />
+              <div class="border-glow" aria-hidden></div>
+              <Image src={ngi} alt="Nedgroup Investments website preview" />
               <h3>Nedgroup Investments</h3>
               <ul class="technologies" aria-label="Technologies I used in Nedgroup Investments project:">
                 <li>HTML</li>
@@ -132,15 +215,16 @@ import "../styles/global.css";
                 <li>JavaScript</li>
               </ul>
               <p>
-                A brief description of Project 2. It highlights my ability to create responsive and user-friendly
-                interfaces.
+                My very first production project :) I worked on dozens of components and layouts in vanilla HTML/CSS/JS
+                (no frameworks), from staff portals to landing pages, all within a giant design system.
               </p>
               <a href="https://www.nedgroupinvestments.com/content/NGISingleSiteContent/Other.html">View Site</a>
             </article>
           </li>
           <li>
             <article>
-              <img src="/src/images/nml.png" alt="NML's 2023 yearend website preview" />
+              <div class="border-glow" aria-hidden></div>
+              <Image src={nml} alt="NML's 2023 yearend website preview" />
               <h3>NML 2023 Yearend</h3>
               <ul class="technologies" aria-label="Technologies I used in NML 2023 Yearend project:">
                 <li>Next.js</li>
@@ -149,15 +233,16 @@ import "../styles/global.css";
                 <li>Framer Motion</li>
               </ul>
               <p>
-                A brief description of Project 3. It demonstrates my expertise in modern web technologies and best
-                practices.
+                A fun internal year-end report site built with Next.js and Framer Motion. My first time using motion
+                animations. Lots of playful UI, subtle transitions and even easter eggs!
               </p>
               <a href="https://yearend.nml.co.za/">View Site</a>
             </article>
           </li>
           <li>
             <article>
-              <img src="/src/images/storage.png" alt="Stor-Age website preview" />
+              <div class="border-glow" aria-hidden></div>
+              <Image src={storage} alt="Stor-Age website preview" />
               <h3>Stor-Age</h3>
               <ul class="technologies" aria-label="Technologies I used in Stor-Age project:">
                 <li>Next.js</li>
@@ -166,8 +251,8 @@ import "../styles/global.css";
                 <li>Strapi</li>
               </ul>
               <p>
-                A brief description of Project 4. It showcases my skills in creating visually appealing and functional
-                web applications.
+                Helped modernise the site for South Africa's leading self-storage brand. I rebuilt their store directory
+                and landing pages in Next.js and hooked up Strapi CMS to replace parts of their old system.
               </p>
               <a href="https://www.stor-age.co.za/">View Site</a>
             </article>
@@ -175,25 +260,74 @@ import "../styles/global.css";
         </ul>
       </section>
       <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a frontend web developer with a passion for creating beautiful and functional websites.</p>
+        <h2>
+          About <Heart2 class="icon" aria-hidden />
+          <span class="underline">Me</span>
+        </h2>
+        <p>
+          I've been obsessed with tech ever since I got my first laptop at 10 and have never looked back. Today I'm an
+          intermediate dev at NML, building complex frontends for big companies and ensuring they're accessible while
+          I'm at it. I love getting stuck into CSS, upcoming web features and other cool things on the web. Outside of
+          work, I'm studying towards a BSc in Computer Science (even if it means less sleep).
+        </p>
+        <div class="other-stuff">
+          <div>
+            <h3 id="other-stuff-i-like"><span class="underline">Other stuff I like:</span></h3>
+            <ul aria-labelledby="other-stuff-i-like">
+              <li>My cat Lilly</li>
+              <li>3D Modelling</li>
+              <li>Simulator games</li>
+              <li>
+                Movies that pass the <a href="https://bechdeltest.com/">Bechdel Test<CircleScribble /></a>
+              </li>
+              <li>Remembering all capital cities</li>
+              <li>Pineapple on pizza</li>
+            </ul>
+            <p class="handwriting">Interact to see another pic of Lilly!<LillyArrow class="icon" aria-hidden /></p>
+          </div>
+          <div>
+            <button
+              class="lilly-pics"
+              type="button"
+              aria-label="Toggle between different pictures of Lilly"
+              aria-pressed="false"
+            >
+              <figure>
+                <Image src={lilly1} alt="My cat Lilly lying outside looking content" />
+                <figcaption>Lilly being a model.</figcaption>
+              </figure>
+              <figure>
+                <Image src={lilly2} alt="Lilly crouched inside of an empty bag while poking her head out" />
+                <figcaption>Lilly being a cave (bag) explorer.</figcaption>
+              </figure>
+            </button>
+          </div>
+        </div>
       </section>
       <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          If you'd like to get in touch, feel free to reach out via email at <a href="mailto:kateellablake@gmail.com"
-          ></a>
-        </p>
+        <h2>
+          <span class="underline">Contact</span>
+          <Smile2 class="icon" aria-hidden />
+        </h2>
         <ul>
-          <li><a href="https://linkedin.com/in/kateblake">LinkedIn</a></li>
-          <li><a href="https://github.com/yayokb">GitHub</a></li>
+          <li>
+            <a href="https://linkedin.com/in/kateblake" aria-label="LinkedIn profile"
+              ><LinkedIn aria-label="LinkedIn logo" /></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/yayokb" aria-label="GitHub profile"><Github aria-label="GitHub logo" /></a>
+          </li>
+          <li><a href="mailto:kateellablake@gmail.com">kateellablake@gmail.com</a></li>
         </ul>
       </section>
     </main>
+    <footer>
+      <p>
+        2025. Developed by me, designed by <a href="https://portfolio-amber-jones-projects.vercel.app/">Amber Jones</a>!
+      </p>
+    </footer>
+
+    <script src="../scripts/lilly-pics-toggle.js"></script>
   </body>
-  <footer>
-    <p>
-      2025. Developed by me, designed by <a href="https://portfolio-amber-jones-projects.vercel.app/">Amber Jones</a>!
-    </p>
-  </footer>
 </html>
