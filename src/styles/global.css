@@ -10,6 +10,12 @@
   inherits: false;
 }
 
+/* View transition for theme switching */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -35,12 +41,21 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   font-weight: 300;
-  color: hsl(var(--foreground));
-  background:
-    /* Noise texture */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700' opacity='0.49'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.164' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='24' specularConstant='1.2' specularExponent='20' lighting-color='hsl(258, 41%, 52%)' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='150'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3CfeColorMatrix type='saturate' values='0' x='0%25' y='0%25' width='100%25' height='100%25' in='specularLighting' result='colormatrix'%3E%3C/feColorMatrix%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='hsl(0, 0%, 14%)'%3E%3C/rect%3E%3Crect width='700' height='700' fill='hsl(258, 41%, 52%)' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E")
-      repeat,
-    /* Base background */ hsl(var(--background));
+  color: var(--foreground);
+  background: var(--background);
   min-height: 100vh;
+}
+
+html[style*="color-scheme: light"] body {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.156' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='27' specularConstant='3' specularExponent='20' lighting-color='hsl(294, 100%25, 35%25)' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='113'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='hsla(0, 0%25, 95%25, 1.00)'%3E%3C/rect%3E%3Crect width='700' height='700' fill='hsl(294, 100%25, 35%25)' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E")
+      repeat,
+    var(--background);
+}
+
+html[style*="color-scheme: dark"] body {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700' opacity='0.49'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.164' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='24' specularConstant='1.2' specularExponent='20' lighting-color='hsl(258, 41%, 52%)' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='150'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3CfeColorMatrix type='saturate' values='0' x='0%25' y='0%25' width='100%25' height='100%25' in='specularLighting' result='colormatrix'%3E%3C/feColorMatrix%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='hsl(0, 0%, 14%)'%3E%3C/rect%3E%3Crect width='700' height='700' fill='hsl(258, 41%, 52%)' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E")
+      repeat,
+    var(--background);
 }
 
 img,
@@ -84,26 +99,34 @@ h6 {
   text-transform: uppercase;
 }
 
-#root {
-  isolation: isolate;
-}
-
 html,
-body,
-#root {
+body {
   min-height: 100%;
   height: 100%;
   scroll-behavior: smooth;
 }
 
 :root {
-  --background: 0, 0%, 13%;
-  --foreground: 0, 0%, 94%;
-  --primary: 177, 68%, 49%;
+  --background-dark: 0, 0%, 13%;
+  --foreground-dark: 0, 0%, 94%;
+  --primary-dark: 177, 68%, 49%;
+  --noise-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700' opacity='0.49'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.164' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='24' specularConstant='1.2' specularExponent='20' lighting-color='hsl(258, 41%, 52%)' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='150'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3CfeColorMatrix type='saturate' values='0' x='0%25' y='0%25' width='100%25' height='100%25' in='specularLighting' result='colormatrix'%3E%3C/feColorMatrix%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='hsl(0, 0%, 14%)'%3E%3C/rect%3E%3Crect width='700' height='700' fill='hsl(258, 41%, 52%)' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E");
 
-  /* --background: 0, 0%, 95%;
-  --foreground: 0, 0%, 13%;
-  --primary: 294, 100%, 35%; */
+  --background-light: 0, 0%, 95%;
+  --foreground-light: 0, 0%, 13%;
+  --primary-light: 294, 100%, 35%;
+  --noise-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 700 700' width='700' height='700'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.156' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='27' specularConstant='3' specularExponent='20' lighting-color='hsl(294, 100%25, 35%25)' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='113'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='hsla(0, 0%25, 95%25, 1.00)'%3E%3C/rect%3E%3Crect width='700' height='700' fill='hsl(294, 100%25, 35%25)' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E");
+
+  --background: light-dark(hsl(var(--background-light)), hsl(var(--background-dark)));
+  --foreground: light-dark(hsl(var(--foreground-light)), hsl(var(--foreground-dark)));
+  --primary: light-dark(hsl(var(--primary-light)), hsl(var(--primary-dark)));
+  --noise: light-dark(var(--noise-light), var(--noise-dark));
+
+  --foreground-10: light-dark(hsla(var(--foreground-light), 0.1), hsla(var(--foreground-dark), 0.1));
+}
+
+html {
+  color-scheme: light dark;
 }
 
 .visually-hidden {
@@ -117,7 +140,7 @@ body,
 }
 
 a {
-  color: hsl(var(--primary));
+  color: var(--primary);
   text-decoration: none;
 
   &:has(.circle-scribble) {
@@ -132,7 +155,7 @@ a {
       width: calc(100% + 2rem);
       max-width: none;
       height: calc(100% + 1em);
-      stroke: hsl(var(--primary));
+      stroke: var(--primary);
       stroke-width: 2;
       stroke-miterlimit: 10;
       stroke-dasharray: 345;
@@ -158,7 +181,7 @@ header,
 footer {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid hsla(var(--foreground), 0.1);
+  border-bottom: 1px solid var(--foreground-10);
   backdrop-filter: blur(10px);
   padding-block: 24px;
   padding-inline: 24px;
@@ -167,10 +190,35 @@ footer {
 }
 
 footer {
-  border-top: 1px solid hsla(var(--foreground), 0.1);
+  border-top: 1px solid var(--foreground-10);
   border-bottom: none;
   border-radius: 16px 16px 0 0;
   justify-content: center;
+}
+
+.logo {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
+
+  span:last-of-type {
+    opacity: 0;
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    span:last-of-type {
+      opacity: 1;
+    }
+  }
 }
 
 header ul {
@@ -187,6 +235,32 @@ header ul > li {
   align-items: center;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.themes {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Themes */
+#themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 main {
@@ -211,7 +285,7 @@ section {
   font-family: "Nanum Pen", sans-serif;
   font-size: 2rem;
   line-height: 1.5;
-  color: hsl(var(--primary));
+  color: var(--primary);
 }
 
 .underline {
@@ -223,14 +297,23 @@ section {
     left: 0;
     width: 100%;
     height: 25%;
-    background-image: url("/src/icons/underline2.svg");
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
+    background-color: var(--primary);
+    mask-image: url("/src/icons/underline2.svg");
+    mask-size: cover;
+    mask-position: 50%;
+    mask-repeat: no-repeat;
     rotate: 2deg;
     clip-path: inset(0 100% 0 0);
     animation: scribble-in 800ms 1.5s forwards ease-out;
   }
+}
+
+html[style="color-scheme: dark;"] #sunIcon {
+  display: none;
+}
+
+html[style="color-scheme: light;"] #moonIcon {
+  display: none;
 }
 
 .intro {
@@ -258,7 +341,7 @@ section {
         width: 55%;
         text-align: right;
         color: transparent;
-        -webkit-text-stroke: 2px hsl(var(--primary));
+        -webkit-text-stroke: 2px var(--primary);
       }
     }
 
@@ -366,12 +449,12 @@ h2 {
       &:nth-child(even) article {
         .border-glow::before,
         &::before {
-          mask-image: linear-gradient(var(--angle-even), hsl(var(--primary)), hsla(0, 0%, 100%, 0) 50%);
+          mask-image: linear-gradient(var(--angle-even), var(--primary), hsla(0, 0%, 100%, 0) 50%);
         }
 
         .border-glow::after,
         &::after {
-          mask-image: linear-gradient(var(--angle-even), hsla(0, 0%, 100%, 0) 50%, hsl(var(--primary)));
+          mask-image: linear-gradient(var(--angle-even), hsla(0, 0%, 100%, 0) 50%, var(--primary));
         }
 
         .border-glow,
@@ -400,7 +483,7 @@ h2 {
       padding: 24px;
       border-radius: 12px;
       position: relative;
-      background: hsl(var(--background));
+      background: var(--background);
 
       .border-glow,
       .border-glow::before,
@@ -416,15 +499,15 @@ h2 {
 
       .border-glow::before,
       &::before {
-        border: 1px solid hsl(var(--primary));
-        mask-image: linear-gradient(var(--angle), hsl(var(--primary)), hsla(0, 0%, 100%, 0) 50%);
+        border: 1px solid var(--primary);
+        mask-image: linear-gradient(var(--angle), var(--primary), hsla(0, 0%, 100%, 0) 50%);
         opacity: 0.7;
       }
 
       .border-glow::after,
       &::after {
-        border: 1px solid hsl(var(--foreground));
-        mask-image: linear-gradient(var(--angle), hsla(0, 0%, 100%, 0) 50%, hsl(var(--primary)));
+        border: 1px solid var(--foreground);
+        mask-image: linear-gradient(var(--angle), hsla(0, 0%, 100%, 0) 50%, var(--primary));
         opacity: 0.3;
       }
 
@@ -481,29 +564,31 @@ h2 {
         &::before {
           content: "";
           position: absolute;
-          background-size: contain;
+          background-color: var(--primary);
+          mask-size: contain;
           top: 50%;
           transform: translateY(-50%);
           height: 1rem;
           width: 1.25rem;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-image: url("/src/icons/small-star.svg");
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-image: url("/src/icons/small-star.svg");
           left: 0;
         }
 
         &::after {
           content: "";
           position: absolute;
-          background-size: contain;
+          background-color: var(--primary);
+          mask-size: contain;
           top: 50%;
           transform: translateY(-50%);
           left: 100%;
           height: 1rem;
           width: 4rem;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-image: url("/src/icons/arrow3.svg");
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-image: url("/src/icons/arrow3.svg");
           clip-path: inset(0 100% 0 0);
           transition: clip-path 0.4s ease-out;
         }
@@ -525,13 +610,29 @@ h2 {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem 1rem;
-        color: hsl(var(--primary));
 
         & li {
           padding: 0.375rem 0.75rem;
-          border: 2px solid hsl(var(--primary));
-          border-image: url("/src/icons/squigglesquare.svg") 4;
-          border-image-width: 4;
+          color: var(--primary);
+          position: relative;
+          border: 1px solid var(--primary);
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 2px solid var(--primary);
+            background: transparent content-box;
+            mask: conic-gradient(#000 0 0) content-box,
+              conic-gradient(at 10px 10px, #0000 75%, #000 0) 0 0 / calc(100% - 10px) calc(100% - 10px);
+            transition: inset 0.3s ease-out;
+          }
+
+          &:hover::after {
+            inset: -8px;
+          }
         }
       }
 
@@ -555,7 +656,11 @@ h2 {
   }
 
   h2 .underline::after {
-    background-image: url("/src/icons/underline5.svg");
+    background-color: var(--primary);
+    mask-image: url("/src/icons/underline5.svg");
+    mask-size: cover;
+    mask-position: 50%;
+    mask-repeat: no-repeat;
     height: 17px;
   }
 
@@ -622,7 +727,7 @@ h2 {
       text-align: center;
       padding: 12px;
       transform: translateY(30px);
-      background: hsl(var(--foreground));
+      background: hsl(var(--foreground-dark));
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       transition-timing-function: linear(
         0,
@@ -649,12 +754,12 @@ h2 {
         border-radius: 12px;
         height: auto;
         aspect-ratio: 3 / 2;
-        color: hsl(var(--background));
+        color: hsl(var(--foreground-light));
       }
 
       figcaption {
         margin-top: 0.5rem;
-        color: hsl(var(--background));
+        color: hsl(var(--foreground-light));
       }
 
       &:first-child {
@@ -724,12 +829,12 @@ h2 {
         display: inline-block;
         width: 40px;
         height: 8px;
-        background: hsl(var(--foreground));
+        background: var(--foreground);
         transform: translateY(-50%);
       }
 
       a {
-        color: hsl(var(--foreground));
+        color: var(--foreground);
         letter-spacing: -15%;
       }
     }
@@ -742,13 +847,13 @@ h2 {
       }
 
       &:hover {
-        color: hsl(var(--primary));
+        color: var(--primary);
 
         svg {
           filter: url("#wiggle");
 
           path {
-            fill: hsl(var(--primary));
+            fill: var(--primary);
           }
         }
       }
@@ -764,7 +869,7 @@ h2 {
   left: 100px;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(at left top, hsl(var(--primary)) 0%, transparent 60%);
+  background: radial-gradient(at left top, var(--primary) 0%, transparent 60%);
   border-radius: 50%;
   z-index: -1;
   opacity: 0.7;
@@ -777,7 +882,7 @@ h2 {
   left: -150px;
   width: 30vw;
   height: 30vw;
-  background: radial-gradient(circle, hsl(var(--primary)) 0%, transparent 65%);
+  background: radial-gradient(circle, var(--primary) 0%, transparent 65%);
   border-radius: 50%;
   z-index: -1;
   opacity: 0.5;
