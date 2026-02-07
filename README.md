@@ -32,6 +32,12 @@ npm run preview
 - Interactive Lilly photo toggle (the most important feature)
 - (in progress) Fully responsive design that works everywhere
 
+## Todos/nice to haves
+
+- Implement a colour picker to let users choose their own theme colour
+- Add a dropdown for colour blind users to switch to a more accessible palette
+- Add more "whimsical" things (as Joshua W. Comeau calls it)
+
 ## Project Structure
 
 ```
