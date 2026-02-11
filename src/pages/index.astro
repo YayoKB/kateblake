@@ -36,20 +36,19 @@ import Mail from "../icons/mail.svg";
     </script>
 
     <Head />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-h1-subset.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-top-subset.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-name-subset.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-pen-subset.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-nav-subset.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/NanumPenScript-Regular-subset.woff2" />
     <style>
       @font-face {
         font-family: "H1 Fallback";
         src: local("Arial"), local("Helvetica"), local("sans-serif");
       }
 
-      /* critiical h1 */
+      /* critiical h1 and nav */
       @font-face {
-        font-family: "Lexend Zetta H1 Crit";
-        src: url("/fonts/crit-h1-subset.woff2") format("woff2");
+        font-family: "Lexend Zetta Top Crit";
+        src: url("/fonts/crit-top-subset.woff2") format("woff2");
         font-weight: bold;
         font-style: normal;
         font-display: swap;
@@ -64,20 +63,11 @@ import Mail from "../icons/mail.svg";
         font-display: swap;
       }
 
-      /* critical nav */
+      /* handwriting font */
       @font-face {
-        font-family: "Lexend Zetta Nav Crit";
-        src: url("/fonts/crit-nav-subset.woff2") format("woff2");
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      /* critical handwriting */
-      @font-face {
-        font-family: "Nanum Pen Crit";
-        src: url("/fonts/crit-pen-subset.woff2") format("woff2");
-        font-weight: normal;
+        font-family: "Nanum Pen";
+        src: url("/fonts/NanumPenScript-Regular-subset.woff2") format("woff2");
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
@@ -98,29 +88,18 @@ import Mail from "../icons/mail.svg";
         font-display: swap;
       }
 
-      /* handwriting font */
-      @font-face {
-        font-family: "Nanum Pen";
-        src: url("/fonts/NanumPenScript-Regular-subset.woff2") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      h1 {
-        font-family: "Lexend Zetta H1 Crit", "H1 Fallback", sans-serif;
+      h1,
+      header ul > li,
+      .monogram {
+        font-family: "Lexend Zetta Top Crit", "H1 Fallback", sans-serif;
       }
 
       .intro .title .name {
         font-family: "Lexend Zetta Name Crit", "H1 Fallback", sans-serif;
       }
 
-      header ul > li {
-        font-family: "Lexend Zetta Nav Crit", "H1 Fallback", sans-serif;
-      }
-
       .intro .handwriting {
-        font-family: "Nanum Pen Crit", cursive;
+        font-family: "Nanum Pen", cursive;
       }
 
       body {
@@ -153,7 +132,7 @@ import Mail from "../icons/mail.svg";
         </defs>
       </svg>
       <div class="header-top">
-        <p class="logo" aria-hidden="true">KB<span>.</span><span>!</span></p>
+        <p class="monogram" aria-hidden="true">KB<span>.</span><span>!</span></p>
         <ul class="text-menu">
           <li>
             <a href="#about">
@@ -181,223 +160,37 @@ import Mail from "../icons/mail.svg";
           aria-controls="mobileMenu"
           type="button"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"
-            ><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
-              ><path d="M5 5L19 5"
-                ><animate
-                  id="hamburger-anim-1"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M5 5L19 5;M5 5L19 19"></animate><animate
-                  id="hamburger-anim-1-reverse"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M5 5L19 19;M5 5L19 5"></animate></path
-              ><path d="M5 12H19"
-                ><animate
-                  id="hamburger-anim-2"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M5 12H19;M12 12H12"></animate><animate
-                  id="hamburger-anim-2-reverse"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M12 12H12;M5 12H19"></animate><set
-                  id="hamburger-set"
-                  attributeName="opacity"
-                  begin="indefinite"
-                  to="0"></set><set id="hamburger-set-reverse" attributeName="opacity" begin="indefinite" to="1"
-                ></set></path
-              ><path d="M5 19L19 19"
-                ><animate
-                  id="hamburger-anim-3"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M5 19L19 19;M5 19L19 5"></animate><animate
-                  id="hamburger-anim-3-reverse"
-                  fill="freeze"
-                  attributeName="d"
-                  begin="indefinite"
-                  dur="0.25s"
-                  values="M5 19L19 5;M5 19L19 19"></animate></path
-              ></g
-            ></svg
-          >
+          <svg viewBox="0 0 10 10">
+            <path d="M2,3 L8,3" class="p1"></path>
+            <path d="M2,5 L8,5" class="p2"></path>
+            <path d="M2,7 L8,7" class="p3"></path>
+          </svg>
         </button>
         <div class="themes">
           <button id="themeToggle" aria-pressed="false" type="button"
             ><svg
               id="sunIcon"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="200"
               height="200"
-              viewBox="0 0 24 24"
-              fill="var(--foreground)"
-              aria-hidden="true"
-              ><g fill="none" stroke="var(--foreground)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                ><path
-                  stroke-dasharray="36"
-                  stroke-dashoffset="36"
-                  d="M12 7c2.76 0 5 2.24 5 5c0 2.76 -2.24 5 -5 5c-2.76 0 -5 -2.24 -5 -5c0 -2.76 2.24 -5 5 -5"
-                  ><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="36;0"></animate></path
-                ><path stroke-dasharray="2" stroke-dashoffset="2" d="M12 19v1M19 12h1M12 5v-1M5 12h-1" opacity="0"
-                  ><animate
-                    fill="freeze"
-                    attributeName="d"
-                    begin="0.6s"
-                    dur="0.2s"
-                    values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="0.6s"
-                    dur="0.2s"
-                    values="2;0"></animate><set fill="freeze" attributeName="opacity" begin="0.6s" to="1"
-                  ></set><animateTransform
-                    attributeName="transform"
-                    dur="30s"
-                    repeatCount="indefinite"
-                    type="rotate"
-                    values="0 12 12;360 12 12"></animateTransform></path
-                ><path
-                  stroke-dasharray="2"
-                  stroke-dashoffset="2"
-                  d="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5"
-                  opacity="0"
-                  ><animate
-                    fill="freeze"
-                    attributeName="d"
-                    begin="0.8s"
-                    dur="0.2s"
-                    values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5"
-                  ></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="0.8s"
-                    dur="0.2s"
-                    values="2;0"></animate><set fill="freeze" attributeName="opacity" begin="0.8s" to="1"
-                  ></set><animateTransform
-                    attributeName="transform"
-                    dur="30s"
-                    repeatCount="indefinite"
-                    type="rotate"
-                    values="0 12 12;360 12 12"></animateTransform></path
-                ></g
-              ></svg
+              viewBox="0 0 56 56"
+              ><path
+                fill="var(--foreground)"
+                d="M30.04 4.61c0-1.102-.938-2.04-2.04-2.04s-2.039.938-2.039 2.04v4.92c0 1.102.938 2.04 2.04 2.04c1.1 0 2.038-.938 2.038-2.04Zm9.538 8.929c-.773.797-.773 2.11 0 2.883c.797.797 2.086.82 2.906 0l3.493-3.492a2.065 2.065 0 0 0 0-2.907c-.774-.773-2.086-.773-2.883 0Zm-26.062 2.883c.773.797 2.086.797 2.882 0c.774-.75.774-2.11.024-2.883l-3.492-3.516c-.75-.75-2.086-.773-2.883 0c-.774.774-.774 2.11-.024 2.883ZM28 16.047c-6.539 0-11.953 5.414-11.953 11.953S21.46 39.977 28 39.977c6.516 0 11.93-5.438 11.93-11.977c0-6.54-5.414-11.953-11.93-11.953m0 3.586c4.57 0 8.367 3.797 8.367 8.367S32.57 36.39 28 36.39c-4.594 0-8.39-3.82-8.39-8.39s3.796-8.367 8.39-8.367m23.32 10.406c1.102 0 2.04-.937 2.04-2.039s-.938-2.04-2.04-2.04h-4.898c-1.102 0-2.04.938-2.04 2.04s.938 2.039 2.04 2.039ZM4.68 25.961c-1.102 0-2.04.937-2.04 2.039s.938 2.039 2.04 2.039h4.898c1.102 0 2.04-.937 2.04-2.039s-.938-2.04-2.04-2.04ZM42.46 39.6a2.08 2.08 0 0 0-2.883 0c-.773.774-.773 2.087 0 2.883L43.094 46c.797.773 2.11.75 2.883-.023c.797-.774.797-2.086 0-2.883Zm-32.437 3.47c-.797.773-.797 2.109-.024 2.882c.774.774 2.11.797 2.906.024l3.492-3.493c.774-.773.774-2.086.024-2.882c-.774-.774-2.11-.774-2.906 0Zm20.015 3.398c0-1.102-.937-2.04-2.039-2.04s-2.039.938-2.039 2.04v4.922c0 1.101.938 2.039 2.04 2.039c1.1 0 2.038-.938 2.038-2.04Z"
+              ></path></svg
             >
             <svg
               id="moonIcon"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              ><g
-                fill="none"
-                stroke="var(--foreground)"
-                stroke-dasharray="4"
-                stroke-dashoffset="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path d="M13 4h1.5M13 4h-1.5M13 4v1.5M13 4v-1.5"
-                  ><animate
-                    id="lineMdMoonAltLoop0"
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="0.7s;lineMdMoonAltLoop0.begin+6s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop0.begin+2s;lineMdMoonAltLoop0.begin+4s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop0.begin+1.2s;lineMdMoonAltLoop0.begin+3.2s;lineMdMoonAltLoop0.begin+5.2s"
-                    dur="0.4s"
-                    values="0;4"></animate><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop0.begin+1.8s"
-                    to="M12 5h1.5M12 5h-1.5M12 5v1.5M12 5v-1.5"></set><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop0.begin+3.8s"
-                    to="M12 4h1.5M12 4h-1.5M12 4v1.5M12 4v-1.5"></set><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop0.begin+5.8s"
-                    to="M13 4h1.5M13 4h-1.5M13 4v1.5M13 4v-1.5"></set></path
-                ><path d="M19 11h1.5M19 11h-1.5M19 11v1.5M19 11v-1.5"
-                  ><animate
-                    id="lineMdMoonAltLoop1"
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="1.1s;lineMdMoonAltLoop1.begin+6s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop1.begin+2s;lineMdMoonAltLoop1.begin+4s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop1.begin+1.2s;lineMdMoonAltLoop1.begin+3.2s;lineMdMoonAltLoop1.begin+5.2s"
-                    dur="0.4s"
-                    values="0;4"></animate><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop1.begin+1.8s"
-                    to="M17 11h1.5M17 11h-1.5M17 11v1.5M17 11v-1.5"></set><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop1.begin+3.8s"
-                    to="M18 12h1.5M18 12h-1.5M18 12v1.5M18 12v-1.5"></set><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop1.begin+5.8s"
-                    to="M19 11h1.5M19 11h-1.5M19 11v1.5M19 11v-1.5"></set></path
-                ><path d="M19 4h1.5M19 4h-1.5M19 4v1.5M19 4v-1.5"
-                  ><animate
-                    id="lineMdMoonAltLoop2"
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="2.9s;lineMdMoonAltLoop2.begin+6s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop2.begin+2s"
-                    dur="0.4s"
-                    values="4;0"></animate><animate
-                    fill="freeze"
-                    attributeName="stroke-dashoffset"
-                    begin="lineMdMoonAltLoop2.begin+1.2s;lineMdMoonAltLoop2.begin+3.2s"
-                    dur="0.4s"
-                    values="0;4"></animate><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop2.begin+1.8s"
-                    to="M20 5h1.5M20 5h-1.5M20 5v1.5M20 5v-1.5"></set><set
-                    attributeName="d"
-                    begin="lineMdMoonAltLoop2.begin+5.8s"
-                    to="M19 4h1.5M19 4h-1.5M19 4v1.5M19 4v-1.5"></set></path
-                ></g
+              width="200"
+              height="200"
+              viewBox="0 0 56 56"
               ><path
-                fill="none"
-                stroke="var(--foreground)"
-                stroke-dasharray="56"
-                stroke-dashoffset="56"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"
-                ><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="56;0"></animate></path
-              ></svg
+                fill="var(--foreground)"
+                d="M31.316 14.887c.282 0 .446-.188.492-.446c.727-3.89.704-3.984 4.758-4.78c.281-.048.446-.188.446-.47c0-.304-.165-.445-.446-.492c-4.054-.82-4.03-.89-4.758-4.781c-.046-.258-.21-.445-.492-.445c-.28 0-.422.187-.468.445c-.75 3.89-.704 3.96-4.782 4.781c-.258.047-.445.188-.445.492c0 .282.188.422.445.47c4.102.796 4.032.89 4.782 4.78c.046.258.187.446.468.446M42.543 30.73c.422 0 .726-.304.773-.75c.774-6.304 1.031-6.398 7.43-7.453c.516-.093.82-.328.82-.797c0-.445-.304-.726-.726-.796c-6.493-1.102-6.75-1.149-7.524-7.454c-.047-.445-.351-.75-.773-.75c-.446 0-.75.305-.797.727c-.82 6.305-1.008 6.375-7.523 7.477c-.422.07-.727.351-.727.796c0 .446.305.704.727.797c6.515 1.055 6.75 1.149 7.523 7.5a.775.775 0 0 0 .797.703M24.918 52.528c8.578 0 15.516-4.312 18.68-11.648c.421-1.008.28-1.781-.164-2.25c-.422-.398-1.125-.492-1.97-.164c-1.757.703-3.913 1.101-6.609 1.101c-10.476 0-17.226-6.539-17.226-16.828c0-2.836.539-5.648 1.265-7.125c.47-.937.422-1.734.024-2.226c-.445-.516-1.242-.68-2.344-.235c-7.195 2.93-12.14 10.43-12.14 19.196c0 11.414 8.39 20.18 20.484 20.18m.047-3.562c-10.008 0-16.969-7.29-16.969-16.899c0-5.906 2.742-11.109 7.102-14.437c-.563 1.523-.891 3.867-.891 6.117c0 11.531 7.969 19.266 19.758 19.266c2.11 0 4.031-.258 5.015-.61c-2.93 4.055-8.156 6.563-14.015 6.563"
+              ></path></svg
             >
             <span class="visually-hidden">Activate light mode</span></button
           >
