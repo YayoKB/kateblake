@@ -34,9 +34,13 @@ npm run preview
 
 ## Todos/nice to haves
 
+- Change Favicon
+- Implement OpenGraph tags for better sharing on social media
+- Link to view/download my CV
 - Implement a colour picker to let users choose their own theme colour
 - Add a dropdown for colour blind users to switch to a more accessible palette
 - Add more "whimsical" things (as Joshua W. Comeau calls it)
+- Section on the readme to credit where I got my icons/SVGs/techniques from
 
 ## Project Structure
 
