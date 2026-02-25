@@ -34,7 +34,6 @@ npm run preview
 
 ## Todos/nice to haves
 
-- Change Favicon
 - Implement OpenGraph tags for better sharing on social media
 - Link to view/download my CV
 - Implement a colour picker to let users choose their own theme colour
