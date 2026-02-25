@@ -6,3 +6,5 @@ if (hamburger) {
     hamburger.setAttribute("aria-expanded", String(!isPressed));
   });
 }
+
+console.log("hamburger menu");

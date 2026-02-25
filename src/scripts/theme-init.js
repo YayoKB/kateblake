@@ -3,3 +3,4 @@ const mode = localStorage.getItem("mode");
 if (mode === "light" || mode === "dark") {
   document.documentElement.style.setProperty("color-scheme", mode);
 }
+console.log("theme init");
