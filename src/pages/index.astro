@@ -31,13 +31,7 @@ import Mail from "../icons/mail.svg";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <script is:inline>
-      // Apply theme immediately to prevent flash
-      const mode = localStorage.getItem("mode");
-      if (mode === "light" || mode === "dark") {
-        document.documentElement.style.setProperty("color-scheme", mode);
-      }
-    </script>
+    <script src="../scripts/theme-init.js"></script>
 
     <Head />
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/crit-top-subset.woff2" />
@@ -404,12 +398,7 @@ import Mail from "../icons/mail.svg";
         >!
       </p>
     </footer>
-    <script>
-      const yearElement = document.getElementById("year");
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear().toString();
-      }
-    </script>
+    <script src="../scripts/update-year.js"></script>
     <script src="../scripts/hamburger-menu.js"></script>
     <script src="../scripts/theme-switch.js"></script>
     <script src="../scripts/lilly-pics-toggle.js"></script>
