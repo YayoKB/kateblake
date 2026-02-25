@@ -54,5 +54,3 @@ function toggleTheme() {
 }
 
 themeToggle.addEventListener("click", toggleTheme);
-
-console.log("theme switch");

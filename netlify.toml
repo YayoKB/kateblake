@@ -6,4 +6,4 @@
         X-Content-Type-Options = "nosniff"
         Referrer-Policy = "same-origin"
         Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
-        Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-m98i2FOXsbJQABDNzslu4lxf8OYaSZFHOOSdbEdY+z8=' 'sha256-QZJijNXjpD4IxBK8aQyOrEus+q2y3NEgkRU5JtgqKXw=' 'sha256-F9ybWnWKnzwPrWZU/51wCEdvIoBUxbpVJqe0YiOKRO4=' 'sha256-mMjiLMc/KAbMgAziH9qWB0dct9vKvLO291kvqMxWHcw=' 'sha256-VY0o/7csJbPr1gQ0AjUBAbta8c7oflOChi4859hjmwk=' 'sha256-OkGBjMuYWM8nGiXamzuEHAeAVQIJgYkrSSWSP2nrL9w='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none';"
+        Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none';"
