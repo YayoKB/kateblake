@@ -39,7 +39,6 @@ npm run preview
 - Implement a colour picker to let users choose their own theme colour
 - Add a dropdown for colour blind users to switch to a more accessible palette
 - Add more "whimsical" things (as Joshua W. Comeau calls it)
-- Section on the readme to credit where I got my icons/SVGs/techniques from
 
 ## Project Structure
 
@@ -60,6 +59,26 @@ npm run preview
 
 Initial design by the talented [Amber Jones](https://portfolio-amber-jones-projects.vercel.app/)!
 
+## Other credits/sources
+
+- Font optimisation techniques from [Jono Alderson](https://www.jonoalderson.com/performance/youre-loading-fonts-wrong/)
+- Circle scribble animation on links from [Mariusz Dabrowski](https://codepen.io/MarioD/pen/KmWQog)
+- "Fuzzy" SVG filters from [John D. Jameson](https://codepen.io/johndjameson/pen/xbGvXop)
+- Project cards glowy borders from [Elpeeda](https://codepen.io/Mahe76/pen/PoyWvXX)
+- Project tags/technologies expanding borders from [LukyVJ](https://codepen.io/LukyVj/pen/LENVMBj)
+
+### Icons/shapes
+
+- Sun and moon icons from [Vjacheslav Trushkin](https://github.com/cyberalien/line-md)
+- Big sparkle and heart from [BRIX Templates](https://www.figma.com/community/file/1110620368778902916/50-hand-drawn-doodles-brix-templates)
+- Underlines from [Kate Birukova](https://www.figma.com/community/file/1071185599375231112/hand-drawn-shapes)
+- Down arrow and project link star and arrow from [Abhijit Chirde](https://www.figma.com/community/file/1115239183719894864/doodle-arrows)
+- Diamond from [Valery Belaziorau](https://www.figma.com/community/file/1241125633606791793/crispy-doodles-120-free-and-fresh-doodles-for-your-mockups)
+- Lilly arrow from [Sanel Selimovic](https://www.figma.com/community/file/1114930608793798350/hand-drawn-vector-shapes)
+- Smiley face from [Mary Amato](https://www.figma.com/community/file/1163036056014082231/free-notion-style-scribbles)
+- LinkedIn and GitHub logo icons from [Maria Ko](https://www.figma.com/community/file/1209522599861224380/social-media-companies-doodle-icons)
+- Mail icon from [Streamline](https://www.streamlinehq.com/icons/flex-solid-free)
+
 ## Deployment
 
 Deployed on Netlify because it's easy and works great with Astro.
@@ -70,4 +89,4 @@ MIT License. That being said, please don't just entirely copy this!
 
 ---
 
-_*Here lies the "built with too much caffeine, not enough sleep" comment that everybody has for some reason*_
+_*Here lies the "built with too much caffeine, not enough sleep" comment that everybody has for some reason.*_
