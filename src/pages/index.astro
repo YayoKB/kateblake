@@ -5,10 +5,10 @@ import "../styles/global.css";
 import CircleScribble from "../icons/circle-scribble.svg";
 import Star from "../icons/star1.svg";
 import DownArrow from "../icons/down-arrow.svg";
-import aurecon from "../images/aurecon.png";
-import ngi from "../images/ngi.png";
-import nml from "../images/nml.png";
-import storage from "../images/storage.png";
+import aurecon from "../images/aurecon.avif";
+import ngi from "../images/ngi.avif";
+import prescient from "../images/prescient.avif";
+import storage from "../images/storage.avif";
 import Diamond from "../icons/diamond.svg";
 import Heart2 from "../icons/heart2.svg";
 import Smile2 from "../icons/smile2.svg";
@@ -236,6 +236,31 @@ import Mail from "../icons/mail.svg";
           <li>
             <article>
               <div class="border-glow" aria-hidden="true"></div>
+              <Image src={prescient} alt="Prescient website preview" />
+              <h3>Prescient</h3>
+              <ul class="technologies" aria-label="Technologies I used in Prescient project:">
+                <li>Next.js</li>
+                <li>Typescript</li>
+                <li>Yup</li>
+                <li>GraphQL</li>
+                <li>Strapi</li>
+              </ul>
+              <p>
+                A long-running complex project to redesign their investment portal. Many dashboards, forms and
+                components with an emphasis on ensuring strict schema validation and error handling with Typescript and
+                Yup. Many GraphQL and Strapi endpoints to connect to, as well as optimising speed and performance across
+                the board.
+              </p>
+              <a href="https://www.nml.co.za/work/prescient">
+                <span aria-hidden="true" class="link-star"></span>View Prescient Case Study<span
+                  aria-hidden="true"
+                  class="link-arrow"></span>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <div class="border-glow" aria-hidden="true"></div>
               <Image src={aurecon} alt="Aurecon website preview" />
               <h3>Aurecon</h3>
               <ul class="technologies" aria-label="Technologies I used in Aurecon project:">
@@ -269,33 +294,22 @@ import Mail from "../icons/mail.svg";
                 My very first production project :) I worked on dozens of components and layouts in vanilla HTML/CSS/JS
                 (no frameworks), from staff portals to landing pages, all within a giant design system.
               </p>
-              <a href="https://www.nedgroupinvestments.com/content/NGISingleSiteContent/Other.html">
-                <span aria-hidden="true" class="link-star"></span>View Nedgroup Investments Site<span
-                  aria-hidden="true"
-                  class="link-arrow"></span>
-              </a>
-            </article>
-          </li>
-          <li>
-            <article>
-              <div class="border-glow" aria-hidden="true"></div>
-              <Image src={nml} alt="NML's 2023 yearend website preview" />
-              <h3>NML 2023 Yearend</h3>
-              <ul class="technologies" aria-label="Technologies I used in NML 2023 Yearend project:">
-                <li>Next.js</li>
-                <li>Typescript</li>
-                <li>Tailwind CSS</li>
-                <li>Framer Motion</li>
+              <ul>
+                <li>
+                  <a href="https://www.nedgroupinvestments.com/content/NGISingleSiteContent/Other.html">
+                    <span aria-hidden="true" class="link-star"></span>View Nedgroup Investments Site<span
+                      aria-hidden="true"
+                      class="link-arrow"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nml.co.za/work/nedgroup-investments-secure-site">
+                    <span aria-hidden="true" class="link-star"></span>View Case Study<span
+                      aria-hidden="true"
+                      class="link-arrow"></span>
+                  </a>
+                </li>
               </ul>
-              <p>
-                A fun internal year-end report site built with Next.js and Framer Motion. My first time using motion
-                animations. Lots of playful UI, subtle transitions and even easter eggs!
-              </p>
-              <a href="https://yearend.nml.co.za/"
-                ><span aria-hidden="true" class="link-star"></span>View NML 2023 Yearend Site<span
-                  aria-hidden="true"
-                  class="link-arrow"></span></a
-              >
             </article>
           </li>
           <li>
@@ -329,9 +343,10 @@ import Mail from "../icons/mail.svg";
         </h2>
         <p>
           I've been obsessed with tech ever since I got my first laptop at 10 and have never looked back. Today I'm an
-          intermediate dev at NML, building complex frontends for big companies and ensuring they're accessible while
-          I'm at it. I love getting stuck into CSS, upcoming web features and other cool things on the web. Outside of
-          work, I'm studying towards a BSc in Computer Science (even if it means less sleep).
+          intermediate dev at <a href="https://www.nml.co.za/">NML<CircleScribble /></a>, building complex frontends for
+          big companies and ensuring all is perfect while I'm at it. I love getting stuck into CSS, upcoming web
+          features and other cool things on the web. Outside of work, I'm studying towards a BSc in Computer Science
+          (even if it means less sleep).
         </p>
         <div class="other-stuff">
           <div>

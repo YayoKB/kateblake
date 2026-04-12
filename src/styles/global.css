@@ -600,7 +600,8 @@ h2 {
         z-index: -1;
       }
 
-      & img {
+      & img,
+      & video {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
@@ -693,6 +694,11 @@ h2 {
             inset: -8px;
           }
         }
+      }
+
+      > ul:not(.technologies) {
+        list-style: none;
+        padding: 0;
       }
 
       &:hover {
